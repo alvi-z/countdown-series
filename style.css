@@ -1,0 +1,1475 @@
+/* =========================================================
+   THE WEEK OF ALBAB
+   WHIMSY-CORE • FROGGY'S LITTLE GUIDE
+========================================================= */
+
+:root {
+  --cream: #fff7e6;
+  --paper: #fffdf6;
+  --brown: #49362c;
+  --dark-green: #183c2d;
+  --forest: #234b37;
+  --sage: #8fa98b;
+  --gold: #e7c76b;
+  --soft-gold: #f5e6ad;
+  --pink: #e4a6a5;
+  --shadow: rgba(15, 30, 22, 0.35);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #122d22;
+  color: var(--cream);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   SCREEN SYSTEM
+========================================================= */
+
+.screen {
+  display: none;
+
+  width: 100%;
+  min-height: 100svh;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+.screen.active {
+  display: block;
+
+  animation:
+    screenIn 0.6s ease;
+}
+
+@keyframes screenIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE LOCK SCREEN BACKGROUND
+========================================================= */
+
+.lock-background {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    url("https://i.ibb.co/qMH7s8VW/IMG-0922.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  z-index: 0;
+
+}
+
+
+/*
+   Slight darkening so the light text remains readable.
+*/
+
+.lock-background::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 25, 18, 0.22),
+      rgba(7, 25, 18, 0.50)
+    );
+
+}
+
+
+/* =========================================================
+   LOCK CONTENT
+========================================================= */
+
+.lock-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100svh;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  padding:
+    55px 24px 60px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.eyebrow {
+
+  margin: 0 0 12px;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--soft-gold);
+
+}
+
+.eyebrow.light {
+  color: #f6e9b7;
+}
+
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+
+.lock-content h1,
+.home-content h1 {
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -1px;
+
+}
+
+
+.lock-content h1 {
+
+  font-size:
+    clamp(45px, 12vw, 76px);
+
+  margin:
+    5px 0 20px;
+
+  color: #fff8e6;
+
+  text-shadow:
+    2px 3px 0
+    rgba(0, 0, 0, 0.25);
+
+}
+
+
+.lock-intro {
+
+  max-width: 450px;
+
+  font-size: 19px;
+
+  line-height: 1.5;
+
+  margin-bottom: 10px;
+
+  color: #fff8e9;
+
+}
+
+
+/* =========================================================
+   FROGGY INTRO
+========================================================= */
+
+.froggy-intro {
+
+  width:
+    min(230px, 65vw);
+
+  margin:
+    4px auto 0;
+
+  /*
+     IMPORTANT:
+     No background.
+     No border.
+     No frame.
+  */
+
+  animation:
+    froggyFloat
+    3.5s
+    ease-in-out
+    infinite;
+
+}
+
+.froggy-intro img {
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  /*
+     Tiny shadow only.
+     Froggy remains a PNG.
+  */
+
+  filter:
+    drop-shadow(
+      0 10px 10px
+      rgba(0,0,0,0.25)
+    );
+
+}
+
+@keyframes froggyFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-1deg);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      rotate(1deg);
+  }
+
+}
+
+
+.lock-content h2 {
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 32px;
+
+  margin:
+    2px 0 8px;
+
+  color: #fff7df;
+
+}
+
+.froggy-message {
+
+  max-width: 430px;
+
+  font-size: 18px;
+
+  line-height: 1.45;
+
+  margin-bottom: 20px;
+
+  color: #fff8e9;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.main-button {
+
+  border:
+    2px solid #f8edcf;
+
+  background:
+    #234b37;
+
+  color:
+    #fff9e9;
+
+  padding:
+    12px 23px;
+
+  border-radius: 30px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0
+    rgba(0,0,0,0.35);
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+.main-button:hover {
+
+  background:
+    #315f47;
+
+  transform:
+    translateY(-3px);
+
+}
+
+.main-button:active {
+
+  transform:
+    translateY(3px);
+
+  box-shadow:
+    0 1px 0
+    rgba(0,0,0,0.35);
+
+}
+
+
+/* =========================================================
+   FROGGY RESPONSE
+========================================================= */
+
+.froggy-response {
+
+  width: 100%;
+
+  max-width: 470px;
+
+  margin-top: 22px;
+
+  padding:
+    22px 24px;
+
+  background:
+    rgba(19, 53, 38, 0.82);
+
+  border:
+    1px solid
+    rgba(246, 230, 173, 0.65);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0,0,0,0.22);
+
+  animation:
+    responseIn
+    0.45s
+    ease;
+
+}
+
+.froggy-response p {
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+  color: #fff7e4;
+
+}
+
+@keyframes responseIn {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(12px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+#homeScreen {
+
+  /*
+     The large lock background remains underneath.
+  */
+
+  background:
+    transparent;
+
+}
+
+
+/*
+   This layer preserves the LARGE background underneath
+   the smaller homepage image.
+*/
+
+.home-background-layer {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background-image:
+    url("https://i.ibb.co/qMH7s8VW/IMG-0922.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
+
+
+/*
+   SMALLER HOMEPAGE BACKGROUND
+
+   It does NOT replace the large image.
+*/
+
+.home-background {
+
+  position: relative;
+
+  z-index: 1;
+
+  width:
+    min(100% - 24px, 1100px);
+
+  min-height: calc(100svh - 24px);
+
+  margin:
+    12px auto;
+
+  border:
+    2px solid
+    rgba(246, 230, 173, 0.65);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  background-image:
+    url("https://i.ibb.co/PsqYZJ9D/IMG-0968.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  box-shadow:
+    0 15px 45px
+    rgba(0,0,0,0.35);
+
+}
+
+
+/* =========================================================
+   HOME OVERLAY
+========================================================= */
+
+.home-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 24, 18, 0.30),
+      rgba(10, 24, 18, 0.62)
+    );
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   HOME CONTENT
+========================================================= */
+
+.home-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding:
+    55px 22px 45px;
+
+  text-align: center;
+
+}
+
+
+.home-content h1 {
+
+  font-size:
+    clamp(42px, 9vw, 70px);
+
+  color:
+    #fff8e5;
+
+  margin:
+    5px 0 18px;
+
+  text-shadow:
+    2px 3px 0
+    rgba(0,0,0,0.25);
+
+}
+
+
+.home-message {
+
+  max-width: 620px;
+
+  margin:
+    0 auto 10px;
+
+  font-size: 19px;
+
+  line-height: 1.5;
+
+  color:
+    #fff8e9;
+
+}
+
+.home-message.secondary {
+
+  font-size: 17px;
+
+  color:
+    #f0e7d2;
+
+  margin-bottom: 35px;
+
+}
+
+
+/* =========================================================
+   DAYS GRID
+========================================================= */
+
+.days-container {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+}
+
+
+/* =========================================================
+   DAY CARD
+========================================================= */
+
+.day-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 250, 233, 0.95);
+
+  border:
+    2px solid
+    #e9d9ad;
+
+  border-radius: 16px;
+
+  padding: 8px;
+
+  box-shadow:
+    0 7px 0
+    rgba(0,0,0,0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation:
+    cardIn
+    0.6s
+    ease both;
+
+}
+
+.day-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.day-card:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.day-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.day-card:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+.day-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.day-card:nth-child(6) {
+  animation-delay: 0.30s;
+}
+
+.day-card:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.day-card:nth-child(8) {
+  animation-delay: 0.40s;
+}
+
+@keyframes cardIn {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+.day-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 13px 0
+    rgba(0,0,0,0.25);
+
+}
+
+
+/* =========================================================
+   DAY IMAGE
+========================================================= */
+
+.day-image-wrap {
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(73,54,44,0.25);
+
+}
+
+.day-image-wrap img {
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+}
+
+
+/* =========================================================
+   LOCK OVERLAY
+========================================================= */
+
+.lock-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(12, 35, 25, 0.32);
+
+  color:
+    #fff5d8;
+
+  font-size: 30px;
+
+  text-shadow:
+    0 2px 5px
+    rgba(0,0,0,0.55);
+
+  transition:
+    opacity 0.25s ease;
+
+}
+
+.day-card:hover .lock-overlay {
+
+  background:
+    rgba(12, 35, 25, 0.18);
+
+}
+
+
+/* =========================================================
+   DAY INFO
+========================================================= */
+
+.day-info {
+
+  padding:
+    9px 3px 3px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 5px;
+
+}
+
+.day-info span {
+
+  color:
+    var(--brown);
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  text-align: left;
+
+}
+
+.day-info button {
+
+  border:
+    1.5px solid
+    var(--brown);
+
+  background:
+    #f8edcf;
+
+  color:
+    var(--brown);
+
+  padding:
+    6px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+
+}
+
+.day-info button:hover {
+
+  background:
+    var(--soft-gold);
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* =========================================================
+   PASSWORD MODAL
+========================================================= */
+
+.password-modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    20px;
+
+  background:
+    rgba(5, 20, 14, 0.72);
+
+  backdrop-filter:
+    blur(5px);
+
+}
+
+
+.password-box {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 430px;
+
+  padding:
+    30px 25px 28px;
+
+  background:
+    #fff8e5;
+
+  border:
+    2px solid
+    #e5cf92;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    10px 12px 0
+    rgba(0,0,0,0.3);
+
+  animation:
+    modalIn
+    0.35s
+    ease;
+
+}
+
+@keyframes modalIn {
+
+  from {
+    opacity: 0;
+    transform:
+      scale(0.92)
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MODAL FROGGY
+========================================================= */
+
+.modal-froggy {
+
+  width: 110px;
+
+  margin:
+    0 auto 5px;
+
+}
+
+.modal-froggy img {
+
+  width: 100%;
+
+  filter:
+    drop-shadow(
+      0 6px 5px
+      rgba(0,0,0,0.18)
+    );
+
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.modal-close {
+
+  position: absolute;
+
+  top: 10px;
+
+  right: 13px;
+
+  border: 0;
+
+  background: transparent;
+
+  color:
+    var(--brown);
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================================
+   MODAL TYPOGRAPHY
+========================================================= */
+
+.password-box .eyebrow {
+
+  color:
+    var(--brown);
+
+}
+
+.password-box h2 {
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 34px;
+
+  color:
+    var(--brown);
+
+  margin:
+    5px 0 8px;
+
+}
+
+.password-box > p:not(.eyebrow):not(.password-error) {
+
+  color:
+    #654b3c;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   PASSWORD FORM
+========================================================= */
+
+#passwordForm {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+}
+
+#passwordInput {
+
+  width: 100%;
+
+  padding:
+    12px 15px;
+
+  border:
+    1.5px solid
+    #9a7863;
+
+  border-radius: 25px;
+
+  background:
+    #fffdf5;
+
+  color:
+    var(--brown);
+
+  text-align: center;
+
+  font-size: 17px;
+
+}
+
+#passwordInput::placeholder {
+
+  color:
+    #a38b7c;
+
+}
+
+#passwordInput:focus {
+
+  outline:
+    2px solid
+    var(--gold);
+
+  outline-offset: 2px;
+
+}
+
+
+/* =========================================================
+   PASSWORD ERROR
+========================================================= */
+
+.password-error {
+
+  margin:
+    15px 0 0;
+
+  color:
+    #9c514b;
+
+  font-size: 15px;
+
+  font-style: italic;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.home-footer {
+
+  margin-top: 38px;
+
+}
+
+.home-footer p {
+
+  margin: 0;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color:
+    #eadcae;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .days-container {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    max-width: 620px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .lock-content {
+
+    padding:
+      45px 20px 50px;
+
+  }
+
+  .lock-content h1 {
+
+    font-size:
+      clamp(42px, 13vw, 58px);
+
+  }
+
+  .lock-intro {
+
+    font-size: 17px;
+
+  }
+
+  .froggy-intro {
+
+    width:
+      min(190px, 55vw);
+
+  }
+
+  .lock-content h2 {
+
+    font-size: 29px;
+
+  }
+
+  .froggy-message {
+
+    font-size: 17px;
+
+  }
+
+
+  .home-background {
+
+    width:
+      calc(100% - 12px);
+
+    min-height:
+      calc(100svh - 12px);
+
+    margin:
+      6px auto;
+
+    border-radius:
+      18px;
+
+  }
+
+  .home-content {
+
+    padding:
+      45px 14px 35px;
+
+  }
+
+  .home-content h1 {
+
+    font-size:
+      clamp(39px, 11vw, 58px);
+
+  }
+
+  .home-message {
+
+    font-size: 17px;
+
+  }
+
+  .home-message.secondary {
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+
+  }
+
+
+  .days-container {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 12px;
+
+  }
+
+  .day-card {
+
+    padding: 6px;
+
+    border-radius: 13px;
+
+  }
+
+  .day-image-wrap {
+
+    border-radius: 8px;
+
+  }
+
+  .day-info {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 6px;
+
+  }
+
+  .day-info span {
+
+    text-align: center;
+
+    font-size: 7px;
+
+  }
+
+  .day-info button {
+
+    width: 100%;
+
+    padding:
+      6px 5px;
+
+    font-size: 10px;
+
+  }
+
+  .lock-overlay {
+
+    font-size: 24px;
+
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .lock-content {
+
+    padding:
+      35px 17px 40px;
+
+  }
+
+  .lock-content h1 {
+
+    font-size: 42px;
+
+  }
+
+  .froggy-intro {
+
+    width: 160px;
+
+  }
+
+  .froggy-response {
+
+    padding:
+      18px;
+
+  }
+
+  .days-container {
+
+    gap: 9px;
+
+  }
+
+  .day-card {
+
+    padding: 5px;
+
+  }
+
+  .day-info button {
+
+    font-size: 9px;
+
+  }
+
+  .password-box {
+
+    padding:
+      25px 18px;
+
+  }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media
+  (max-height: 550px)
+  and (orientation: landscape) {
+
+  .lock-content {
+
+    min-height: 700px;
+
+    padding-top: 30px;
+
+  }
+
+  .froggy-intro {
+
+    width: 130px;
+
+  }
+
+  .home-content {
+
+    padding-top: 35px;
+
+  }
+
+}
