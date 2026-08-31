@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>The Countdown Series</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     MAIN WRAPPER
+===================================================== -->
+
+<div class="site-wrapper">
+
+
+  <!-- ===================================================
+       LOCK SCREEN / PAGE 1
+  =================================================== -->
+
+  <section
+    class="screen active"
+    id="lockScreen"
+  >
+
+    <!-- LARGE BACKGROUND -->
+    <div class="lock-background"></div>
+
+
+    <!-- LOCK CONTENT -->
+
+    <div class="lock-content">
+
+      <p class="eyebrow">
+        HAPPY ALBAB WEEK 💌
+      </p>
+
+      <h1>
+        Welcome to<br>
+        the countdown series
+      </h1>
+
+      <p class="lock-intro">
+        Today marks the beggining of September
+        (which means, only a week left for your bday!)
+        And in the anticipation of this special event,
+        I have put together a little something for you...
+       </p>
+
+
+      <!-- FROGGY — PNG, NO FRAME -->
+
+      <div class="froggy-intro">
+
+        <img
+          src="https://i.ibb.co/p6Ys61bx/IMG-0962.png"
+          alt="Froggy"
+        >
+
+      </div>
+
+
+      <h2>
+        Meet Froggy! 🐸
+      </h2>
+
+      <p class="froggy-message">
+        He'll be your little guide
+        throughout this adventure.
+      </p>
+
+
+      <button
+        class="main-button"
+        type="button"
+        onclick="sayHi()"
+      >
+        Say hi to Froggy ✦
+      </button>
+
+
+      <!-- FROGGY RESPONSE -->
+
+      <div
+        class="froggy-response hidden"
+        id="froggyResponse"
+      >
+
+        <p>
+          Hi!!! 🐸
+        </p>
+
+        <p>
+          I'm Froggy, and I've been waiting for you!
+          I have something very important to show you...
+        </p>
+
+        <button
+          class="main-button"
+          type="button"
+          onclick="enterHome()"
+        >
+          Let Froggy show you ✦
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===================================================
+       HOME SCREEN / PAGE 2
+  =================================================== -->
+
+  <section
+    class="screen"
+    id="homeScreen"
+  >
+
+    <!-- THE LARGE LOCK BACKGROUND REMAINS BEHIND THIS -->
+    <div class="home-background-layer"></div>
+
+
+    <!-- SMALLER HOMEPAGE BACKGROUND -->
+
+    <div class="home-background">
+
+      <div class="home-overlay"></div>
+
+
+      <!-- HOME CONTENT -->
+
+      <div class="home-content">
+
+
+        <p class="eyebrow light">
+          FROGGY'S LITTLE GUIDE
+        </p>
+
+
+        <h1>
+          Welcome to<br>
+          the Week of Albab!
+        </h1>
+
+
+        <p class="home-message">
+          A whole week of little surprises,
+         adventures, and challenges
+           made especially for you.
+        </p>
+
+
+        <p class="home-message secondary">
+          Guidelines: everyday until your birthday,
+          you will be opening one froggy. Inside each
+          froggy box is a gift waiting for you. 
+          Check the day, ask Alvina the corresponding 
+          password, and attain your gift!!
+        </p>
+
+
+
+        <!-- =================================================
+             DAY CARDS
+        ================================================= -->
+
+        <div class="days-container">
+
+
+          <!-- DAY 1 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/XrGGVSjh/IMG-0958.png"
+                alt="Day 1"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY ONE
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(1)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 2 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/KxPMwdf4/IMG-0955.png"
+                alt="Day 2"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY TWO
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(2)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 3 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/dvWDkct/IMG-0954.png"
+                alt="Day 3"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY THREE
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(3)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 4 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/dsSYWxjR/IMG-0943.png"
+                alt="Day 4"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY FOUR
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(4)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 5 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/N8PZhrH/IMG-0942.png"
+                alt="Day 5"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY FIVE
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(5)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 6 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/bMdJD5Jm/IMG-0940.png"
+                alt="Day 6"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY SIX
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(6)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 7 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/ZpWmbDkP/IMG-0939.png"
+                alt="Day 7"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY SEVEN
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(7)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- DAY 8 -->
+
+          <article class="day-card">
+
+            <div class="day-image-wrap">
+
+              <img
+                src="https://i.ibb.co/yFwQ436f/IMG-0965.png"
+                alt="Day 8"
+              >
+
+              <div class="lock-overlay">
+                🔒
+              </div>
+
+            </div>
+
+            <div class="day-info">
+
+              <span>
+                DAY EIGHT
+              </span>
+
+              <button
+                type="button"
+                onclick="openDay(8)"
+              >
+                Unlock ✦
+              </button>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PASSWORD MODAL
+        ================================================= -->
+
+        <div
+          class="password-modal hidden"
+          id="passwordModal"
+        >
+
+          <div class="password-box">
+
+            <button
+              class="modal-close"
+              type="button"
+              onclick="closePasswordModal()"
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+
+            <div class="modal-froggy">
+
+              <img
+                src="https://i.ibb.co/p6Ys61bx/IMG-0962.png"
+                alt="Froggy"
+              >
+
+            </div>
+
+
+            <p class="eyebrow">
+              FROGGY'S SECRET
+            </p>
+
+
+            <h2>
+              Unlock Your Day
+            </h2>
+
+
+            <p id="passwordPrompt">
+              Enter the password to continue.
+            </p>
+
+
+            <form
+              id="passwordForm"
+              onsubmit="checkPassword(event)"
+            >
+
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password..."
+                autocomplete="off"
+              >
+
+
+              <button
+                class="main-button"
+                type="submit"
+              >
+                Unlock ✦
+              </button>
+
+            </form>
+
+
+            <p
+              class="password-error hidden"
+              id="passwordError"
+            >
+              Hmm... Froggy says that's not quite right.
+              Try again! 🐸
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SMALL FOOTER
+        ================================================= -->
+
+        <div class="home-footer">
+
+          <p>
+            ✦ &nbsp; Froggy is keeping watch &nbsp; ✦
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
